@@ -1,0 +1,38 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content= 
+      "width=device-width, initial-scale=1.0"> 
+    <title>TIP CALCULATER</title> 
+    <link rel="stylesheet" href="calculater.css">
+    <script src="calculater.js"></script>  
+</head> 
+<body> 
+    <div id="wrapper">
+        <header>
+            <h1>Tip Calculator</h1>
+        </header>
+        <form onsubmit="return false">
+            Amount: Rs.<input id="bill" type="text">
+            <br><br>
+            Tip: <span id="tip"></span>
+            <br><br>
+            Total: <span id="total"></span><br><br>
+            <button onclick="calc()">Calculate</button>
+            <br>
+        </form>
+    </div>
+    <script>
+        function calc() {
+            var bill = document.getElementById('bill').value;
+            var tip = bill * .10;
+            var total = bill*1 + tip;
+    
+            document.getElementById("tip").innerHTML= "Rs."+(tip).toFixed(2);
+            document.getElementById("total").innerHTML= "Rs."+(total).toFixed(2);         
+        }
+    </script>
+    
+</body> 
+</html>
